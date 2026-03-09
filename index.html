@@ -3,15 +3,41 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Simple Vercel Demo</title>
+  <title>Static Calculator</title>
   <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
-  <main class="container">
-    <h1>My First Vercel Web App</h1>
-    <p>This is my first GitHub + Vercel deployment.</p>
-    <button id="helloBtn">Click Me</button>
-    <p id="output"></p>
+  <main class="calculator">
+    <h1>Static Calculator</h1>
+
+    <form id="calculatorForm">
+      <label>
+        First number
+        <input id="num1" type="number" step="any" placeholder="e.g. 12.5" />
+      </label>
+
+      <label>
+        Operator
+        <select id="operator">
+          <option value="+">+</option>
+          <option value="-">-</option>
+          <option value="*">×</option>
+          <option value="/">÷</option>
+        </select>
+      </label>
+
+      <label>
+        Second number
+        <input id="num2" type="number" step="any" placeholder="e.g. 3" />
+      </label>
+
+      <div class="actions">
+        <button id="calculateBtn" type="submit">Calculate</button>
+        <button id="clearBtn" type="button">Clear</button>
+      </div>
+    </form>
+
+    <p id="result" aria-live="polite">Result: —</p>
   </main>
 
   <script src="./script.js"></script>
