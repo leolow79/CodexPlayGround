@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Supply & Demand Laboratory</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              softWhite: '#F5F5F7',
+              demand: '#0A84FF',
+              supply: '#FF7A45'
+            },
+            boxShadow: {
+              glass: '0 8px 32px rgba(17, 24, 39, 0.08)'
+            }
+          }
+        }
+      };
+    </script>
+    <style>
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', sans-serif;
+      }
+
+      .slider-haptic {
+        -webkit-appearance: none;
+        appearance: none;
+        height: 6px;
+        border-radius: 9999px;
+        background: linear-gradient(90deg, rgba(148, 163, 184, 0.35), rgba(148, 163, 184, 0.75));
+        transition: transform 0.2s ease;
+      }
+
+      .slider-haptic:active {
+        transform: scaleY(1.2);
+      }
+
+      .slider-haptic::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        height: 18px;
+        width: 18px;
+        border-radius: 9999px;
+        background: white;
+        border: 2px solid #334155;
+        box-shadow: 0 0 0 4px rgba(15, 23, 42, 0.08);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .slider-haptic::-webkit-slider-thumb:active {
+        transform: scale(1.14);
+        box-shadow: 0 0 0 7px rgba(15, 23, 42, 0.12);
+      }
+
+      .slider-haptic::-moz-range-thumb {
+        height: 18px;
+        width: 18px;
+        border-radius: 9999px;
+        background: white;
+        border: 2px solid #334155;
+        box-shadow: 0 0 0 4px rgba(15, 23, 42, 0.08);
+      }
+    </style>
+  </head>
+  <body class="bg-softWhite text-slate-800 antialiased">
+    <div id="root"></div>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
